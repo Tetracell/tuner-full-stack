@@ -5,7 +5,7 @@ const { getAllSongs, getSong, createSong } = require("../queries/songs");
 //Index
 songs.get("/", async (req, res) => {
   const allSongs = await getAllSongs();
-  if (allSongs[0]) {
+  if (allSongs[0]) { // A simple check to see if there are any songs
     res.status(200).json(allSongs);
   } else {
     res.status(500).json({ error: "server error" });
@@ -30,7 +30,9 @@ songs.post("/", async (req, res) => {
     return error;
   }
 });
-songs.delete("/:id", async (req, res) => {});
+songs.delete("/:id", async (req, res) => {
+
+});
 songs.put("/:id", async (req, res) => {});
 
 module.exports = songs;
