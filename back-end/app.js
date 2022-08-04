@@ -14,8 +14,8 @@ app.get("/", (req, res) => {
   res.send("Welcome to it's not a tuner");
 });
 
-const songController = require("./controllers/songController");
-app.use("/songs", songController);
+const songsController = require("./controllers/songsController");
+app.use("/songs", songsController);
 
 //404
 app.get("*", (req, res) => {
